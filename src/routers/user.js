@@ -4,7 +4,21 @@ const router = new express.Router();
 
 router.get('/', (req, res) => {
   res.render('home', {
-    title: 'checQPro | Home',
+    title: 'ChecQPro | Home',
+    shared_data,
+  });
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup', {
+    title: 'ChecQPro | Signup',
+    shared_data,
+  });
+});
+
+router.get('/signin', (req, res) => {
+  res.render('signin', {
+    title: 'ChecQPro | Signin',
     shared_data,
   });
 });
