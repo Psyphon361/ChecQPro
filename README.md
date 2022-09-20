@@ -1,7 +1,9 @@
 # **ChecQPro - Automated Cheque Processing and Fraud Detection**
 
-**INTRODUCTION:** Through this project, We are aiming to automate the process of cheque processing. In order to perform the task of cheque verification, we developed
+**INTRODUCTION:** Through this project, we are aiming to automate the process of cheque processing. In order to perform the task of cheque verification, we developed
 a tool which acquires the cheque leaflet key components, essential for the task of cheque clearance using image processing and deep learning methods. These components include the bank branch code, cheque number, legal as well as courtesy amount, cheque date, account number, and signature patterns. 
+
+# Instructions:
 
 ## Prerequisites:
     1. NodeJS should be installed on the system.
