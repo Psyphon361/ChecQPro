@@ -1,6 +1,6 @@
 html,
 body {
-  overflow-x: hidden; 
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif !important;
   background-color: #1c1824;
 }
@@ -382,3 +382,145 @@ body {
 }
 
 /* SIGNIN PAGE ENDS */
+
+/* REGISTRATION FORM STARTS */
+
+.btnRegister {
+  float: right;
+  margin-top: 6%;
+  border: none;
+  outline: none;
+  border-radius: 1.5rem;
+  padding: 2%;
+  background: #1ec162;
+  color: #fff;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btnRegister:hover {
+  background: #18b358;
+}
+
+.btnRegister:focus {
+  background: #18b358;
+  outline: none !important;
+  border: none !important;
+}
+
+.form-group .form-control {
+  height: 50px;
+  /* background-color: #131117;
+  border-color: #efefef; */
+}
+
+/* .form-group .form-control {
+    height: 50px;
+    background-color: #131117;
+    border-color: #efefef;
+  }
+
+.form-group .form-control:focus {
+  height: 50px;
+  background-color: #131117;
+  border-color: #efefef;
+} */
+
+.register .nav-tabs {
+  margin-top: 3%;
+  border: none;
+  background: #0062cc;
+  border-radius: 1.5rem;
+  width: 28%;
+  float: right;
+}
+.register .nav-tabs .nav-link {
+  padding: 2%;
+  height: 34px;
+  font-weight: 600;
+  color: #fff;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover {
+  border: none;
+}
+.register .nav-tabs .nav-link.active {
+  width: 100px;
+  color: #0062cc;
+  border: 2px solid #0062cc;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+.register-heading {
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: -15%;
+  color: #495057;
+}
+
+
+/*DRAG AND DROP INPUT*/
+
+.files input {
+  outline: 2px dashed #92b0b3;
+  outline-offset: -15px;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  padding: 70px 100px 105px 25%;
+  text-align: center !important;
+  margin: 0;
+  width: 100% !important;
+}
+.files input:focus {
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  border: 1px solid #92b0b3;
+}
+.files {
+  position: relative;
+}
+.files:after {
+  pointer-events: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 50px;
+  right: 0;
+  height: 56px;
+  content: '';
+  background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+  display: block;
+  margin: 0 auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.color input {
+  background-color: #f1f1f1;
+}
+.files:before {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  right: 0;
+  height: 57px;
+  content: ' or drag it here. ';
+  display: block;
+  margin: 0 auto;
+  color: #2ea591;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/*DRAG AND DROP INPUT*/
+
+/* REGISTRATION FORM ENDS */

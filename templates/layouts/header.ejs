@@ -45,7 +45,7 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li style="font-size: 21px" class="nav-item active px-md-2 mx-3">
-                        <a class="nav-link" href="/add-invoice">Upload Cheque <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/cheque">Process Cheque <span class="sr-only">(current)</span></a>
                     </li>
                     <li style="font-size: 21px" class="nav-item active px-md-2 mx-3">
                         <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
@@ -61,34 +61,21 @@
                     <% if (shared_data.user_is_authenticated===true) { %>
                         <form target="/logout" method="POST" class="form-inline mt-2 mt-md-0 pr-md-5 mr-md-5">
                             <a style="text-decoration: none; font-size: 20px;" class="pr-5 login" href="/history">
-                                <i class="fas fa-file-invoice-dollar pr-1"></i> Invoices
+                                <i class="fas fa-file-invoice-dollar pr-1"></i> Cheques
                             </a>
                             <!-- <a style="text-decoration: none; font-size: 20px;" class="pr-5 login" href="/logout">
                                 Logout
                             </a> -->
                             <ul class="navbar-nav">
-                                <div class="dropdown">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                                <div class="">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/logout" id="dropdown01" >
                                             <div style="text-decoration: none; font-size: 20px" class="test">
                                                 <span class="login">
-                                                    Account
+                                                    Logout
                                                 </span>
-
-                                                <i class="fas fa-caret-down login"></i>
                                             </div>
                                         </a>
-
-                                        <div style="background-color: #000;" class="dropdown-menu"
-                                            aria-labelledby="dropdown01">
-                                            <a style="width: 150px;" class="dropdown-item user-dropdown"
-                                                href="/add-account">Add Account</a>
-
-                                            <a style="width: 150px;" class="dropdown-item user-dropdown"
-                                                href="/logout">Log
-                                                out</a>
-                                        </div>
                                     </li>
                                 </div>
                             </ul>

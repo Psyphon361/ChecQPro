@@ -1,18 +1,18 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-var findOrCreate = require('mongoose-findorcreate');
-
-const shared_data = require('../shared-data/shared-vars');
+import mongoose from 'mongoose';
+import validator from 'validator';
 
 const userSchema = new mongoose.Schema(
   {
-    username: {
+    fname: {
       type: String,
-      unique: false,
+      required: true,
       trim: true,
-      default: 'NONAME',
+    },
+
+    lname: {
+      type: String,
+      required: false,
+      trim: true,
     },
 
     email: {
@@ -28,110 +28,44 @@ const userSchema = new mongoose.Schema(
       },
     },
 
-    password: {
+    address: {
       type: String,
-      trim: true,
-      minlength: 6,
-      default: 'NOPASS',
-    },
-
-    fname: {
-      type: String,
-      default: '*_*',
       required: true,
       trim: true,
-    },
-
-    lname: {
-      type: String,
-      default: '*_*',
-      required: true,
-      trim: true,
-    },
-
-    monthly_income: {
-      type: Number,
-      default: 0,
-      required: true,
-      trim: true,
-    },
-
-    family_members: {
-      type: Number,
-      default: 0,
-      validate(value) {
-        if (value < 0) {
-          throw new Error('family members count must be positive!');
-        }
-      },
-      required: true,
     },
 
     phone: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    account_number: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    bank_balance: {
       type: Number,
-      default: 0,
       required: true,
     },
 
-    balance: {
+    cheque_start: {
       type: Number,
-      default: 10,
       required: true,
     },
 
-    food: {
+    cheque_end: {
       type: Number,
-      default: 0,
+      required: true,
     },
 
-    green_grocery: {
-      type: Number,
-      default: 0,
+    signature: {
+      type: String,
+      required: true,
+      trim: true,
     },
-
-    hotels: {
-      type: Number,
-      default: 0,
-    },
-
-    alcohol: {
-      type: Number,
-      default: 0,
-    },
-
-    clothes: {
-      type: Number,
-      default: 0,
-    },
-
-    house: {
-      type: Number,
-      default: 0,
-    },
-
-    health: {
-      type: Number,
-      default: 0,
-    },
-
-    education: {
-      type: Number,
-      default: 0,
-    },
-
-    special_occasion: {
-      type: Number,
-      default: 0,
-    },
-
-    tokens: [
-      {
-        token: {
-          type: String,
-          required: true,
-        },
-      },
-    ],
   },
 
   {
@@ -139,58 +73,12 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-userSchema.virtual('invoices', {
-  ref: 'Invoice',
-  localField: '_id',
-  foreignField: 'customer',
+userSchema.virtual('cheques', {
+  ref: 'Cheque',
+  localField: 'account_number',
+  foreignField: 'customer_id',
 });
-
-// GENERATE AUTH TOKEN USING JWT
-userSchema.methods.generateAuthToken = async function () {
-  const user = this;
-  const token = jwt.sign({ _id: user._id.toString() }, 'zetahackssecretkey');
-
-  user.tokens = user.tokens.concat({ token });
-  await user.save();
-
-  return token;
-};
-
-userSchema.statics.findByCredentials = async (email, password) => {
-  const user = await User.findOne({ email });
-
-  if (!user) {
-    shared_data.valid_user = false;
-    return undefined;
-    // throw new Error("Unable to login!");
-  }
-
-  const isMatch = await bcrypt.compare(password, user.password);
-
-  if (!isMatch) {
-    shared_data.valid_user = false;
-    return undefined;
-    // throw new Error("Unable to login!");
-  }
-
-  shared_data.valid_user = true;
-  return user;
-};
-
-// HASH PLAIN TEXT PASSWORDS
-userSchema.pre('save', async function (next) {
-  const user = this;
-
-  if (user.isModified('password')) {
-    user.password = await bcrypt.hash(user.password, 8);
-  }
-
-  next();
-});
-
-userSchema.plugin(findOrCreate);
 
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;
- 
+export default User;

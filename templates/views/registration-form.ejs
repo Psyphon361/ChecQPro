@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #131117 !important">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title><%= title %></title>
+
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Google Fonts -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1581152092/smartwizard/smart_wizard.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1581152091/smartwizard/smart_wizard_theme_arrows.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Fontawesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/c622614d7c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1581152197/smartwizard/jquery.smartWizard.min.js"
+    ></script>
+  </head>
+
+  <body style="background-color: #131117 !important">
+    <section class="">
+      <div class="container pt-md-3 p-1 m-1">
+        <div class="row">
+          <div class="col">
+            <a class="px-md-4 mx-md-3 p-1 m-1" href="/">
+              <img
+                class="signup-header-img mx-md-5"
+                src="images/small_logo.png"
+                alt="checqpro-logo"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-5 m-5">
+      <div class="container reg-form-container">
+        <form method="POST" action="/register" autocomplete="off">
+          <div class="row">
+            <div class="col-6 px-5">
+              <div class="form-group pb-2">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control"
+                  placeholder="First Name *"
+                  name="fname"
+                  value=""
+                  required
+                />
+              </div>
+              <div class="form-group pb-2">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control"
+                  placeholder="Last Name *"
+                  name="lname"
+                  value=""
+                  required
+                />
+              </div>
+              <div class="form-group pb-2">
+                <input
+                  autocomplete="off"
+                  type="number"
+                  class="form-control"
+                  placeholder="Employee ID *"
+                  name="employee_id"
+                  value=""
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                 autocomplete="off"
+                  type="text"
+                  class="form-control"
+                  placeholder="Department *"
+                  name="department"
+                  value=""
+                  required
+                />
+              </div>
+               <div class="d-flex justify-content-center m-auto">
+              <button class="btnRegister" type="submit" value="submit">
+                Register
+              </button>
+              </div>
+            </div>
+
+            <div class="col-6 px-5">
+                <div class="form-group pb-3">
+                    <input
+                        autocomplete="off"
+                        disabled
+                        class="form-control"
+                        value="<%= email %>"
+                     
+                    />
+                </div>
+              <div class="form-group pb-2">
+                <input
+                autocomplete="off"
+                  type="number"
+                  class="form-control"
+                  placeholder="Mobile Number *"
+                  name="mobile_number"
+                  value=""
+                  required
+                /> 
+              </div> 
+              <div class="form-group files">
+                <label style="color: #fff !important;">Upload ID Card (png/jpg/jpeg) * </label>
+                <input
+                    autocomplete="off"
+                    type="file"
+                    class="form-control pl-4"
+                    name="id_card"
+                    required
+                />
+              </div>
+
+             
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
+  </body>
+</html>

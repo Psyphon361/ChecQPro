@@ -13,10 +13,16 @@ const app = express();
 app.use(cookieParser());
 // app.use(
 //   cookieSession({
-//       name: "SMART",
-//       keys: [process.env.TWITTER_ACCESS_TOKEN, process.env.TWITTER_ACCESS_SECRET],
+//     name: 'BOB',
+//     keys: ['key1', 'key2'],
 //   })
 // );
+app.use(
+  cookieSession({
+    name: 'BOB',
+    keys: [process.env.TWITTER_ACCESS_TOKEN, process.env.TWITTER_ACCESS_SECRET],
+  })
+);
 
 // Define paths for express config
 const __filename = url.fileURLToPath(import.meta.url);
@@ -24,6 +30,9 @@ const __dirname = path.dirname(__filename);
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const port = process.env.PORT;
+
+// File uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded

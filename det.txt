@@ -2,8 +2,8 @@ USER:
 f_name*, l_name, email*, phone*, address*, account_no*, balance*, cheque_start*, cheque_end*, sign_jpg*, virtual_cheque
 
 EMPLOYEE:
-f_name*, l_name, e_id*, department, id_card*, email*, password*, phone*
+f_name*, l_name, e_id*, department*, id_card*, email*, password*, phone*
 
 CHEQUE:
-date, payee, amount_words, figure, acc_no, chq_no, sign (*)
+date, payee, amount_words, figure, acc_no, chq_no, isValid(*)
 
